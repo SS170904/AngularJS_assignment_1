@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html ng-app='LunchApp'>
+  <head >
     <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet">
     <title>Healthy Lunch ?</title>
   </head>
   <body>
+    <div style="width:800px; margin:0 auto;" class="control-group" ng-controller='LunchController'><h1>Welcome to Lunch Checker!</h1>
+      <label class="control-label twentyTopMargin">List comma separated dishes you usually have for lunch:   </label>
 
+      <input type="text" maxlength="100" size="100px" ng-model="lstItems"><br><i  class="text-info">We ignores the empty items :-)</i></input>
+      <br><br>
+      <p>
+
+      <input ng-click="CountItems()" type="button"  class="btn btn-primary" value="Check If Too Much"></input>
+      <h3  class="{{msgClass}}">{{ShowMessage}}</h3>
+    </p>
   </body>
 </html>
